@@ -1,1037 +1,1080 @@
 <Crumb>
-	<Crumb::Item @link="docs">Documentation</Crumb::Item>
-	<Crumb::Item @link="docs.surrealql">SurrealQL</Crumb::Item>
-	<Crumb::Item @link="docs.surrealql.functions">Functions</Crumb::Item>
-	<Crumb::Item @link="docs.surrealql.functions.time">Time functions</Crumb::Item>
+    <Crumb::Item @link='docs'>Documentation</Crumb::Item>
+    <Crumb::Item @link='docs.surrealql'>SurrealQL</Crumb::Item>
+    <Crumb::Item @link='docs.surrealql.functions'>Functions</Crumb::Item>
+    <Crumb::Item @link='docs.surrealql.functions.time'>Time functions</Crumb::Item>
 </Crumb>
 
 <Layout::Text text-l text-f>
     <h2>Time functions</h2>
-	<p>These functions can be used when working with and manipulating datetime values.</p>
+    <p>These functions can be used when working with and manipulating datetime values.</p>
 </Layout::Text>
 
 <Layout::Gap mini />
 
 <Layout::Table filled>
-	<table>
-		<thead>
-			<tr>
-				<th w-40>Function</th>
-				<th w-60>Description</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>
-					<a href="#day">
-						<code>time::day()</code>
-					</a>
-				</td>
-				<td>Extracts the day as a number from a datetime</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="#floor">
-						<code>time::floor()</code>
-					</a>
-				</td>
-				<td>Rounds a datetime down by a specific duration</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="#format">
-						<code>time::format()</code>
-					</a>
-				</td>
-				<td>Outputs a datetime according to a specific format</td>
-			</tr>
+    <table>
+        <thead>
             <tr>
-				<td>
-					<a href="#group">
-						<code>time::group()</code>
-					</a>
-				</td>
-				<td>Groups a datetime by a particular time interval</td>
-			</tr>
+                <th w-40>Function</th>
+                <th w-60>Description</th>
+            </tr>
+        </thead>
+        <tbody>
             <tr>
-				<td>
-					<a href="#hour">
-						<code>time::hour()</code>
-					</a>
-				</td>
-				<td>Extracts the hour as a number from a datetime</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="#minute">
-						<code>time::minute()</code>
-					</a>
-				</td>
-				<td>Extracts the minutes as a number from a datetime</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="#month">
-						<code>time::month()</code>
-					</a>
-				</td>
-				<td>Extracts the month as a number from a datetime</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="#nano">
-						<code>time::nano()</code>
-					</a>
-				</td>
-				<td>Returns the number of nanoseconds since the UNIX epoch</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="#now">
-						<code>time::now()</code>
-					</a>
-				</td>
-				<td>Returns the current datetime</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="#round">
-						<code>time::round()</code>
-					</a>
-				</td>
-				<td>Rounds a datetime to the nearest multiple of a specific duration</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="#second">
-						<code>time::second()</code>
-					</a>
-				</td>
-				<td>Extracts the second as a number from a datetime</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="#timezone">
-						<code>time::timezone()</code>
-					</a>
-				</td>
-				<td>Returns the current local timezone offset in hours</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="#unix">
-						<code>time::unix()</code>
-					</a>
-				</td>
-				<td>Returns the number of seconds since the UNIX epoch</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="#wday">
-						<code>time::wday()</code>
-					</a>
-				</td>
-				<td>Extracts the week day as a number from a datetime</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="#week">
-						<code>time::week()</code>
-					</a>
-				</td>
-				<td>Extracts the week as a number from a datetime</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="#yday">
-						<code>time::yday()</code>
-					</a>
-				</td>
-				<td>Extracts the yday as a number from a datetime</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="#year">
-						<code>time::year()</code>
-					</a>
-				</td>
-				<td>Extracts the year as a number from a datetime</td>
-			</tr>
-		</tbody>
-	</table>
+                <td>
+                    <a href='#day'>
+                        <code>time::day()</code>
+                    </a>
+                </td>
+                <td>Extracts the day as a number from a datetime</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href='#floor'>
+                        <code>time::floor()</code>
+                    </a>
+                </td>
+                <td>Rounds a datetime down by a specific duration</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href='#format'>
+                        <code>time::format()</code>
+                    </a>
+                </td>
+                <td>Outputs a datetime according to a specific format</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href='#group'>
+                        <code>time::group()</code>
+                    </a>
+                </td>
+                <td>Groups a datetime by a particular time interval</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href='#hour'>
+                        <code>time::hour()</code>
+                    </a>
+                </td>
+                <td>Extracts the hour as a number from a datetime</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href='#minute'>
+                        <code>time::minute()</code>
+                    </a>
+                </td>
+                <td>Extracts the minutes as a number from a datetime</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href='#month'>
+                        <code>time::month()</code>
+                    </a>
+                </td>
+                <td>Extracts the month as a number from a datetime</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href='#nano'>
+                        <code>time::nano()</code>
+                    </a>
+                </td>
+                <td>Returns the number of nanoseconds since the UNIX epoch</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href='#now'>
+                        <code>time::now()</code>
+                    </a>
+                </td>
+                <td>Returns the current datetime</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href='#round'>
+                        <code>time::round()</code>
+                    </a>
+                </td>
+                <td>Rounds a datetime to the nearest multiple of a specific duration</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href='#second'>
+                        <code>time::second()</code>
+                    </a>
+                </td>
+                <td>Extracts the second as a number from a datetime</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href='#timezone'>
+                        <code>time::timezone()</code>
+                    </a>
+                </td>
+                <td>Returns the current local timezone offset in hours</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href='#unix'>
+                        <code>time::unix()</code>
+                    </a>
+                </td>
+                <td>Returns the number of seconds since the UNIX epoch</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href='#wday'>
+                        <code>time::wday()</code>
+                    </a>
+                </td>
+                <td>Extracts the week day as a number from a datetime</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href='#week'>
+                        <code>time::week()</code>
+                    </a>
+                </td>
+                <td>Extracts the week as a number from a datetime</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href='#yday'>
+                        <code>time::yday()</code>
+                    </a>
+                </td>
+                <td>Extracts the yday as a number from a datetime</td>
+            </tr>
+            <tr>
+                <td>
+                    <a href='#year'>
+                        <code>time::year()</code>
+                    </a>
+                </td>
+                <td>Extracts the year as a number from a datetime</td>
+            </tr>
+        </tbody>
+    </table>
 </Layout::Table>
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "day"}}>
+<Layout::Group {{waypoint 'day'}}>
 
-	<Layout::Text text-l text-f>
-		<h3>time::day</h3>
-		<p>The <code>time::day</code> function extracts the day as a number from a datetime.</p>
-		<Code @name="docs-surrealql-functions-time-day.surql" text="API Definition">
-			time::day(datetime) -> number
-		</Code>
-		<p>The following example shows this function, and its output, when used in a select statement:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-time-day-input.surql">
-				SELECT * FROM time::day("2021-11-01T08:30:17+00:00");
-			</Code>
-			<Code @name="docs-surrealql-functions-time-day-result.txt">
-				1
-			</Code>
-		</codes>
-		<p>If the argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+    <Layout::Text text-l text-f>
+        <h3>time::day</h3>
+        <p>The <code>time::day</code> function extracts the day as a number from a datetime.</p>
+        <Code @name='docs-surrealql-functions-time-day.surql' text='API Definition'>
+            time::day(datetime) -> number
+        </Code>
+        <p>The following example shows this function, and its output, when used in a select statement:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-time-day-error-input.surql">
-				SELECT * FROM time::day(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-time-day-error-result.txt">
-				null
-			</Code>
-		</codes>
-	</Layout::Text>
-
-</Layout::Group>
-
-<Layout::Gap small />
-
-<Layout::Group {{waypoint "floor"}}>
-
-	<Layout::Text text-l text-f>
-		<h3>time::floor</h3>
-		<p>The <code>time::floor</code> function rounds a datetime down by a specific duration.</p>
-		<Code @name="docs-surrealql-functions-time-floor.surql" text="API Definition">
-			time::floor(datetime, duration) -> datetime
-		</Code>
-		<p>The following example shows this function, and its output, when used in a select statement:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-time-floor-input.surql">
-				SELECT * FROM time::floor("2021-11-01T08:30:17+00:00", 1w);
-			</Code>
-			<Code @name="docs-surrealql-functions-time-floor-result.txt">
-				"2021-10-28T00:00:00Z"
-			</Code>
-		</codes>
-		<p>If the first argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+            <Code @name='docs-surrealql-functions-time-day-input.surql'>
+                SELECT * FROM time::day("2021-11-01T08:30:17+00:00");
+            </Code>
+            <Code @name='docs-surrealql-functions-time-day-result.txt'>
+                1
+            </Code>
+        </codes>
+        <p>If the argument is not a datetime, then an
+            <Link @link='docs.surrealql.datamodel.simple'><code>EMPTY</code></Link>
+            value will be returned:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-time-floor-error-input.surql">
-				SELECT * FROM time::floor(12345, 1w);
-			</Code>
-			<Code @name="docs-surrealql-functions-time-floor-error-result.txt">
-				null
-			</Code>
-		</codes>
-	</Layout::Text>
+            <Code @name='docs-surrealql-functions-time-day-error-input.surql'>
+                SELECT * FROM time::day(12345);
+            </Code>
+            <Code @name='docs-surrealql-functions-time-day-error-result.txt'>
+                null
+            </Code>
+        </codes>
+    </Layout::Text>
 
 </Layout::Group>
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "format"}}>
+<Layout::Group {{waypoint 'floor'}}>
 
-	<Layout::Text text-l text-f>
-		<h3>time::format</h3>
-		<p>The <code>time::format</code> function outputs a datetime according to a specific format.</p>
-		<Code @name="docs-surrealql-functions-time-format.surql" text="API Definition">
-			time::format(datetime, string) -> string
-		</Code>
-		<p>The following example shows this function, and its output, when used in a select statement:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-time-format-input.surql">
-				SELECT * FROM time::format("2021-11-01T08:30:17+00:00", "%Y-%m-%d");
-			</Code>
-			<Code @name="docs-surrealql-functions-time-format-result.txt">
-				"2021-11-01"
-			</Code>
-		</codes>
-		<p>If the first argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+    <Layout::Text text-l text-f>
+        <h3>time::floor</h3>
+        <p>The <code>time::floor</code> function rounds a datetime down by a specific duration.</p>
+        <Code @name='docs-surrealql-functions-time-floor.surql' text='API Definition'>
+            time::floor(datetime, duration) -> datetime
+        </Code>
+        <p>The following example shows this function, and its output, when used in a select statement:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-time-format-error-input.surql">
-				SELECT * FROM time::format(12345, "%Y-%m-%d");
-			</Code>
-			<Code @name="docs-surrealql-functions-time-format-error-result.txt">
-				null
-			</Code>
-		</codes>
-	</Layout::Text>
-
-	<Layout::Gap tiny />
-
-	<details>
-
-		<summary>View all format options</summary>
-
-		<h5>Date formatters</h5>
-
-		<Layout::Table filled>
-			<table>
-				<thead>
-					<tr>
-						<th w-10>Specifier</th>
-		                <th w-10>Example</th>
-						<th w-80>Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><code>%Y</code></td>
-						<td><code>2001</code></td>
-						<td>The full proleptic Gregorian year, zero-padded to 4 digits.</td>
-					</tr>
-					<tr>
-						<td><code>%C</code></td>
-						<td><code>20</code></td>
-						<td>The proleptic Gregorian year divided by 100, zero-padded to 2 digits.</td>
-					</tr>
-					<tr>
-						<td><code>%y</code></td>
-						<td><code>01</code></td>
-						<td>The proleptic Gregorian year modulo 100, zero-padded to 2 digits.</td>
-					</tr>
-					<tr>
-						<td><code>%m</code></td>
-						<td><code>07</code></td>
-						<td>Month number (01 to 12), zero-padded to 2 digits.</td>
-					</tr>
-					<tr>
-						<td><code>%b</code></td>
-						<td><code>Jul</code></td>
-						<td>Abbreviated month name. Always 3 letters.</td>
-					</tr>
-					<tr>
-						<td><code>%B</code></td>
-						<td><code>July</code></td>
-						<td>Full month name.</td>
-					</tr>
-					<tr>
-						<td><code>%h</code></td>
-						<td><code>Jul</code></td>
-						<td>Same as <code>%b</code>.</td>
-					</tr>
-					<tr>
-						<td><code>%d</code></td>
-						<td><code>08</code></td>
-						<td>Day number (01 to 31), zero-padded to 2 digits.</td>
-					</tr>
-					<tr>
-						<td><code>%e</code></td>
-						<td><code>8</code></td>
-						<td>Same as <code>%d</code> but space-padded. Same as <code>%_d</code>.</td>
-					</tr>
-					<tr>
-						<td><code>%a</code></td>
-						<td><code>Sun</code></td>
-						<td>Abbreviated weekday name. Always 3 letters.</td>
-					</tr>
-					<tr>
-						<td><code>%A</code></td>
-						<td><code>Sunday</code></td>
-						<td>Full weekday name.</td>
-					</tr>
-					<tr>
-						<td><code>%w</code></td>
-						<td><code>0</code></td>
-						<td>Day of the week. Sunday = 0, Monday = 1, ..., Saturday = 6.</td>
-					</tr>
-					<tr>
-						<td><code>%u</code></td>
-						<td><code>7</code></td>
-						<td>Day of the week. Monday = 1, Tuesday = 2, ..., Sunday = 7. (ISO 8601)</td>
-					</tr>
-					<tr>
-						<td><code>%U</code></td>
-						<td><code>28</code></td>
-						<td>Week number starting with Sunday (00 to 53), zero-padded to 2 digits.</td>
-					</tr>
-					<tr>
-						<td><code>%W</code></td>
-						<td><code>27</code></td>
-						<td>Same as <code>%U</code>, but week 1 starts with the first Monday in that year instead.</td>
-					</tr>
-					<tr>
-						<td><code>%G</code></td>
-						<td><code>2001</code></td>
-						<td>Same as <code>%Y</code> but uses the year number in ISO 8601 week date.</td>
-					</tr>
-					<tr>
-						<td><code>%g</code></td>
-						<td><code>01</code></td>
-						<td>Same as <code>%y</code> but uses the year number in ISO 8601 week date.</td>
-					</tr>
-					<tr>
-						<td><code>%V</code></td>
-						<td><code>27</code></td>
-						<td>Same as <code>%U</code> but uses the week number in ISO 8601 week date (01 to 53).</td>
-					</tr>
-					<tr>
-						<td><code>%j</code></td>
-						<td><code>189</code></td>
-						<td>Day of the year (001 to 366), zero-padded to 3 digits.</td>
-					</tr>
-					<tr>
-						<td><code>%D</code></td>
-						<td><code>07/08/01</code></td>
-						<td>Month-day-year format. Same as <code>%m/%d/%y</code>.</td>
-					</tr>
-					<tr>
-						<td><code>%x</code></td>
-						<td><code>07/08/01</code></td>
-						<td>Locale's date representation.</td>
-					</tr>
-					<tr>
-						<td><code>%F</code></td>
-						<td><code>2001-07-08</code></td>
-						<td>Year-month-day format (ISO 8601). Same as <code>%Y-%m-%d</code>.</td>
-					</tr>
-					<tr>
-						<td><code>%v</code></td>
-						<td><code>8-Jul-2001</code></td>
-						<td>Day-month-year format. Same as <code>%e-%b-%Y</code>.</td>
-					</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-
-		<h5>Time formatters</h5>
-
-		<Layout::Table filled>
-			<table>
-				<thead>
-					<tr>
-						<th w-10>Specifier</th>
-		                <th w-10>Example</th>
-						<th w-80>Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><code>%H</code></td>
-						<td><code>00</code></td>
-						<td>Hour number (00 to 23), zero-padded to 2 digits.</td>
-					</tr>
-					<tr>
-						<td><code>%k</code></td>
-						<td><code>0</code></td>
-						<td>Same as <code>%H</code> but space-padded. Same as <code>%_H</code>.</td>
-					</tr>
-					<tr>
-						<td><code>%I</code></td>
-						<td><code>12</code></td>
-						<td>Hour number in 12-hour clocks (01 to 12), zero-padded to 2 digits.</td>
-					</tr>
-					<tr>
-						<td><code>%l</code></td>
-						<td><code>12</code></td>
-						<td>Same as <code>%I</code> but space-padded. Same as <code>%_I</code>.</td>
-					</tr>
-					<tr>
-						<td><code>%P</code></td>
-						<td><code>am</code></td>
-						<td><code>am</code> or <code>pm</code> in 12-hour clocks.</td>
-					</tr>
-					<tr>
-						<td><code>%p</code></td>
-						<td><code>AM</code></td>
-						<td><code>AM</code> or <code>PM</code> in 12-hour clocks.</td>
-					</tr>
-					<tr>
-						<td><code>%M</code></td>
-						<td><code>34</code></td>
-						<td>Minute number (00 to 59), zero-padded to 2 digits.</td>
-					</tr>
-					<tr>
-						<td><code>%S</code></td>
-						<td><code>60</code></td>
-						<td>Second number (00 to 60), zero-padded to 2 digits.</td>
-					</tr>
-					<tr>
-						<td><code>%f</code></td>
-						<td><code>026490000</code></td>
-						<td>The fractional seconds (in nanoseconds) since last whole second.</td>
-					</tr>
-					<tr>
-						<td><code>%.f</code></td>
-						<td><code>.026490</code></td>
-						<td>Similar to <code>%f</code> but left-aligned.</td>
-					</tr>
-					<tr>
-						<td><code>%.3f</code></td>
-						<td><code>.026</code></td>
-						<td>Similar to <code>.%f</code> but left-aligned but fixed to a length of 3.</td>
-					</tr>
-					<tr>
-						<td><code>%.6f</code></td>
-						<td><code>.026490</code></td>
-						<td>Similar to <code>.%f</code> but left-aligned but fixed to a length of 6.</td>
-					</tr>
-					<tr>
-						<td><code>%.9f</code></td>
-						<td><code>.026490000</code></td>
-						<td>Similar to <code>.%f</code> but left-aligned but fixed to a length of 9.</td>
-					</tr>
-					<tr>
-						<td><code>%3f</code></td>
-						<td><code>026</code></td>
-						<td>Similar to <code>%.3f</code> but without the leading dot.</td>
-					</tr>
-					<tr>
-						<td><code>%6f</code></td>
-						<td><code>026490</code></td>
-						<td>Similar to <code>%.6f</code> but without the leading dot.</td>
-					</tr>
-					<tr>
-						<td><code>%9f</code></td>
-						<td><code>026490000</code></td>
-						<td>Similar to <code>%.9f</code> but without the leading dot.</td>
-					</tr>
-					<tr>
-						<td><code>%R</code></td>
-						<td><code>00:34</code></td>
-						<td>Hour-minute format. Same as <code>%H:%M</code>.</td>
-					</tr>
-					<tr>
-						<td><code>%T</code></td>
-						<td><code>00:34:60</code></td>
-						<td>Hour-minute-second format. Same as <code>%H:%M:%S</code>.</td>
-					</tr>
-					<tr>
-						<td><code>%X</code></td>
-						<td><code>00:34:60</code></td>
-						<td>Locale's time representation.</td>
-					</tr>
-					<tr>
-						<td><code>%r</code></td>
-						<td><code>12:34:60 AM</code></td>
-						<td>Hour-minute-second format in 12-hour clocks. Same as <code>%I:%M:%S %p</code>.</td>
-					</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-
-		<h5>Timezone formatters</h5>
-
-		<Layout::Table filled>
-			<table>
-				<thead>
-					<tr>
-						<th w-10>Specifier</th>
-		                <th w-10>Example</th>
-						<th w-80>Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><code>%Z</code></td>
-						<td><code>ACST</code></td>
-						<td>Local time zone name.</td>
-					</tr>
-					<tr>
-						<td><code>%z</code></td>
-						<td><code>+0930</code></td>
-						<td>Offset from the local time to UTC (with UTC being <code>+0000</code>).</td>
-					</tr>
-					<tr>
-						<td><code>%:z</code></td>
-						<td><code>+09:30</code></td>
-						<td>Same as <code>%z</code> but with a colon.</td>
-					</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-
-		<h5>Date & time formatters</h5>
-
-		<Layout::Table filled>
-			<table>
-				<thead>
-					<tr>
-						<th w-10>Specifier</th>
-		                <th w-10>Example</th>
-						<th w-80>Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><code>%c</code></td>
-						<td><code>Sun Jul  8 00:34:60 2001</code></td>
-						<td>Locale's date and time.</td>
-					</tr>
-					<tr>
-						<td><code>%+</code></td>
-						<td><code>2001-07-08T00:34:60.026490+09:30</code></td>
-						<td>ISO 8601 / RFC 3339 date & time format.</td>
-					</tr>
-					<tr>
-						<td><code>%s</code></td>
-						<td><code>994518299</code></td>
-						<td>UNIX timestamp, the number of seconds since 1970-01-01T00:00:00.</td>
-					</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-
-		<h5>Other formatters</h5>
-
-		<Layout::Table filled>
-			<table>
-				<thead>
-					<tr>
-						<th w-10>Specifier</th>
-						<th w-10>Example</th>
-						<th w-80>Description</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><code>%t</code></td>
-						<td></td>
-						<td>Literal tab (<code>\t</code>).</td>
-					</tr>
-					<tr>
-						<td><code>%n</code></td>
-						<td></td>
-						<td>Literal newline (<code>\n</code>).</td>
-					</tr>
-					<tr>
-						<td><code>%%</code></td>
-						<td></td>
-						<td>Literal percent sign.</td>
-					</tr>
-				</tbody>
-			</table>
-		</Layout::Table>
-
-	</details>
-
-</Layout::Group>
-
-<Layout::Gap small />
-
-<Layout::Group {{waypoint "group"}}>
-
-	<Layout::Text text-l text-f>
-		<h3>time::group</h3>
-		<p>The <code>time::group</code> function reduces and rounds a datetime down to a particular time interval. The second argument must be a string, and can be one of the following values: <code>year</code>, <code>month</code>, <code>day</code>, <code>hour</code>, <code>minute</code>, <code>second</code>.</p>
-		<Code @name="docs-surrealql-functions-time-group.surql" text="API Definition">
-			time::group(datetime, string) -> datetime
-		</Code>
-		<p>The following example shows this function, and its output, when used in a select statement:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-time-group-input.surql">
-				SELECT * FROM time::group("2021-11-01T08:30:17+00:00", "year");
-			</Code>
-			<Code @name="docs-surrealql-functions-time-group-result.txt">
-				"2021-01-01T00:00:00Z"
-			</Code>
-		</codes>
-		<p>If the first argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+            <Code @name='docs-surrealql-functions-time-floor-input.surql'>
+                SELECT * FROM time::floor("2021-11-01T08:30:17+00:00", 1w);
+            </Code>
+            <Code @name='docs-surrealql-functions-time-floor-result.txt'>
+                "2021-10-28T00:00:00Z"
+            </Code>
+        </codes>
+        <p>If the first argument is not a datetime, then an
+            <Link @link='docs.surrealql.datamodel.simple'><code>EMPTY</code></Link>
+            value will be returned:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-time-group-error-input.surql">
-				SELECT * FROM time::group(12345, "week");
-			</Code>
-			<Code @name="docs-surrealql-functions-time-group-error-result.txt">
-				null
-			</Code>
-		</codes>
-	</Layout::Text>
+            <Code @name='docs-surrealql-functions-time-floor-error-input.surql'>
+                SELECT * FROM time::floor(12345, 1w);
+            </Code>
+            <Code @name='docs-surrealql-functions-time-floor-error-result.txt'>
+                null
+            </Code>
+        </codes>
+    </Layout::Text>
 
 </Layout::Group>
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "hour"}}>
+<Layout::Group {{waypoint 'format'}}>
 
-	<Layout::Text text-l text-f>
-		<h3>time::hour</h3>
-		<p>The <code>time::hour</code> function extracts the hour as a number from a datetime.</p>
-		<Code @name="docs-surrealql-functions-time-hour.surql" text="API Definition">
-			time::hour(datetime) -> number
-		</Code>
-		<p>The following example shows this function, and its output, when used in a select statement:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-time-hour-input.surql">
-				SELECT * FROM time::hour("2021-11-01T08:30:17+00:00");
-			</Code>
-			<Code @name="docs-surrealql-functions-time-hour-result.txt">
-				8
-			</Code>
-		</codes>
-		<p>If the argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+    <Layout::Text text-l text-f>
+        <h3>time::format</h3>
+        <p>The <code>time::format</code> function outputs a datetime according to a specific format.</p>
+        <Code @name='docs-surrealql-functions-time-format.surql' text='API Definition'>
+            time::format(datetime, string) -> string
+        </Code>
+        <p>The following example shows this function, and its output, when used in a select statement:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-time-hour-error-input.surql">
-				SELECT * FROM time::hour(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-time-hour-error-result.txt">
-				null
-			</Code>
-		</codes>
-	</Layout::Text>
-
-</Layout::Group>
-
-<Layout::Gap small />
-
-<Layout::Group {{waypoint "minute"}}>
-
-	<Layout::Text text-l text-f>
-		<h3>time::minute</h3>
-		<p>The <code>time::minute</code> function extracts the minutes as a number from a datetime.</p>
-		<Code @name="docs-surrealql-functions-time-minute.surql" text="API Definition">
-			time::minute(datetime) -> number
-		</Code>
-		<p>The following example shows this function, and its output, when used in a select statement:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-time-minute-input.surql">
-				SELECT * FROM time::minute("2021-11-01T08:30:17+00:00");
-			</Code>
-			<Code @name="docs-surrealql-functions-time-minute-result.txt">
-				30
-			</Code>
-		</codes>
-		<p>If the argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+            <Code @name='docs-surrealql-functions-time-format-input.surql'>
+                SELECT * FROM time::format("2021-11-01T08:30:17+00:00", "%Y-%m-%d");
+            </Code>
+            <Code @name='docs-surrealql-functions-time-format-result.txt'>
+                "2021-11-01"
+            </Code>
+        </codes>
+        <p>If the first argument is not a datetime, then an
+            <Link @link='docs.surrealql.datamodel.simple'><code>EMPTY</code></Link>
+            value will be returned:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-time-minute-error-input.surql">
-				SELECT * FROM time::minute(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-time-minute-error-result.txt">
-				null
-			</Code>
-		</codes>
-	</Layout::Text>
+            <Code @name='docs-surrealql-functions-time-format-error-input.surql'>
+                SELECT * FROM time::format(12345, "%Y-%m-%d");
+            </Code>
+            <Code @name='docs-surrealql-functions-time-format-error-result.txt'>
+                null
+            </Code>
+        </codes>
+    </Layout::Text>
+
+    <Layout::Gap tiny />
+
+    <details>
+
+        <summary>View all format options</summary>
+
+        <h5>Date formatters</h5>
+
+        <Layout::Table filled>
+            <table>
+                <thead>
+                    <tr>
+                        <th w-10>Specifier</th>
+                        <th w-10>Example</th>
+                        <th w-80>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>%Y</code></td>
+                        <td><code>2001</code></td>
+                        <td>The full proleptic Gregorian year, zero-padded to 4 digits.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%C</code></td>
+                        <td><code>20</code></td>
+                        <td>The proleptic Gregorian year divided by 100, zero-padded to 2 digits.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%y</code></td>
+                        <td><code>01</code></td>
+                        <td>The proleptic Gregorian year modulo 100, zero-padded to 2 digits.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%m</code></td>
+                        <td><code>07</code></td>
+                        <td>Month number (01 to 12), zero-padded to 2 digits.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%b</code></td>
+                        <td><code>Jul</code></td>
+                        <td>Abbreviated month name. Always 3 letters.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%B</code></td>
+                        <td><code>July</code></td>
+                        <td>Full month name.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%h</code></td>
+                        <td><code>Jul</code></td>
+                        <td>Same as <code>%b</code>.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%d</code></td>
+                        <td><code>08</code></td>
+                        <td>Day number (01 to 31), zero-padded to 2 digits.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%e</code></td>
+                        <td><code>8</code></td>
+                        <td>Same as <code>%d</code> but space-padded. Same as <code>%_d</code>.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%a</code></td>
+                        <td><code>Sun</code></td>
+                        <td>Abbreviated weekday name. Always 3 letters.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%A</code></td>
+                        <td><code>Sunday</code></td>
+                        <td>Full weekday name.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%w</code></td>
+                        <td><code>0</code></td>
+                        <td>Day of the week. Sunday = 0, Monday = 1, ..., Saturday = 6.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%u</code></td>
+                        <td><code>7</code></td>
+                        <td>Day of the week. Monday = 1, Tuesday = 2, ..., Sunday = 7. (ISO 8601)</td>
+                    </tr>
+                    <tr>
+                        <td><code>%U</code></td>
+                        <td><code>28</code></td>
+                        <td>Week number starting with Sunday (00 to 53), zero-padded to 2 digits.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%W</code></td>
+                        <td><code>27</code></td>
+                        <td>Same as <code>%U</code>, but week 1 starts with the first Monday in that year instead.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%G</code></td>
+                        <td><code>2001</code></td>
+                        <td>Same as <code>%Y</code> but uses the year number in ISO 8601 week date.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%g</code></td>
+                        <td><code>01</code></td>
+                        <td>Same as <code>%y</code> but uses the year number in ISO 8601 week date.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%V</code></td>
+                        <td><code>27</code></td>
+                        <td>Same as <code>%U</code> but uses the week number in ISO 8601 week date (01 to 53).</td>
+                    </tr>
+                    <tr>
+                        <td><code>%j</code></td>
+                        <td><code>189</code></td>
+                        <td>Day of the year (001 to 366), zero-padded to 3 digits.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%D</code></td>
+                        <td><code>07/08/01</code></td>
+                        <td>Month-day-year format. Same as <code>%m/%d/%y</code>.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%x</code></td>
+                        <td><code>07/08/01</code></td>
+                        <td>Locale's date representation.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%F</code></td>
+                        <td><code>2001-07-08</code></td>
+                        <td>Year-month-day format (ISO 8601). Same as <code>%Y-%m-%d</code>.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%v</code></td>
+                        <td><code>8-Jul-2001</code></td>
+                        <td>Day-month-year format. Same as <code>%e-%b-%Y</code>.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </Layout::Table>
+
+        <h5>Time formatters</h5>
+
+        <Layout::Table filled>
+            <table>
+                <thead>
+                    <tr>
+                        <th w-10>Specifier</th>
+                        <th w-10>Example</th>
+                        <th w-80>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>%H</code></td>
+                        <td><code>00</code></td>
+                        <td>Hour number (00 to 23), zero-padded to 2 digits.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%k</code></td>
+                        <td><code>0</code></td>
+                        <td>Same as <code>%H</code> but space-padded. Same as <code>%_H</code>.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%I</code></td>
+                        <td><code>12</code></td>
+                        <td>Hour number in 12-hour clocks (01 to 12), zero-padded to 2 digits.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%l</code></td>
+                        <td><code>12</code></td>
+                        <td>Same as <code>%I</code> but space-padded. Same as <code>%_I</code>.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%P</code></td>
+                        <td><code>am</code></td>
+                        <td><code>am</code> or <code>pm</code> in 12-hour clocks.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%p</code></td>
+                        <td><code>AM</code></td>
+                        <td><code>AM</code> or <code>PM</code> in 12-hour clocks.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%M</code></td>
+                        <td><code>34</code></td>
+                        <td>Minute number (00 to 59), zero-padded to 2 digits.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%S</code></td>
+                        <td><code>60</code></td>
+                        <td>Second number (00 to 60), zero-padded to 2 digits.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%f</code></td>
+                        <td><code>026490000</code></td>
+                        <td>The fractional seconds (in nanoseconds) since last whole second.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%.f</code></td>
+                        <td><code>.026490</code></td>
+                        <td>Similar to <code>%f</code> but left-aligned.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%.3f</code></td>
+                        <td><code>.026</code></td>
+                        <td>Similar to <code>.%f</code> but left-aligned but fixed to a length of 3.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%.6f</code></td>
+                        <td><code>.026490</code></td>
+                        <td>Similar to <code>.%f</code> but left-aligned but fixed to a length of 6.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%.9f</code></td>
+                        <td><code>.026490000</code></td>
+                        <td>Similar to <code>.%f</code> but left-aligned but fixed to a length of 9.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%3f</code></td>
+                        <td><code>026</code></td>
+                        <td>Similar to <code>%.3f</code> but without the leading dot.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%6f</code></td>
+                        <td><code>026490</code></td>
+                        <td>Similar to <code>%.6f</code> but without the leading dot.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%9f</code></td>
+                        <td><code>026490000</code></td>
+                        <td>Similar to <code>%.9f</code> but without the leading dot.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%R</code></td>
+                        <td><code>00:34</code></td>
+                        <td>Hour-minute format. Same as <code>%H:%M</code>.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%T</code></td>
+                        <td><code>00:34:60</code></td>
+                        <td>Hour-minute-second format. Same as <code>%H:%M:%S</code>.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%X</code></td>
+                        <td><code>00:34:60</code></td>
+                        <td>Locale's time representation.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%r</code></td>
+                        <td><code>12:34:60 AM</code></td>
+                        <td>Hour-minute-second format in 12-hour clocks. Same as <code>%I:%M:%S %p</code>.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </Layout::Table>
+
+        <h5>Timezone formatters</h5>
+
+        <Layout::Table filled>
+            <table>
+                <thead>
+                    <tr>
+                        <th w-10>Specifier</th>
+                        <th w-10>Example</th>
+                        <th w-80>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>%Z</code></td>
+                        <td><code>ACST</code></td>
+                        <td>Local time zone name.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%z</code></td>
+                        <td><code>+0930</code></td>
+                        <td>Offset from the local time to UTC (with UTC being <code>+0000</code>).</td>
+                    </tr>
+                    <tr>
+                        <td><code>%:z</code></td>
+                        <td><code>+09:30</code></td>
+                        <td>Same as <code>%z</code> but with a colon.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </Layout::Table>
+
+        <h5>Date & time formatters</h5>
+
+        <Layout::Table filled>
+            <table>
+                <thead>
+                    <tr>
+                        <th w-10>Specifier</th>
+                        <th w-10>Example</th>
+                        <th w-80>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>%c</code></td>
+                        <td><code>Sun Jul 8 00:34:60 2001</code></td>
+                        <td>Locale's date and time.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%+</code></td>
+                        <td><code>2001-07-08T00:34:59.026490+09:30</code></td>
+                        <td>ISO 8601 / RFC 3339 date & time format.</td>
+                    </tr>
+                    <tr>
+                        <td><code>%s</code></td>
+                        <td><code>994518299</code></td>
+                        <td>UNIX timestamp, the number of seconds since 1970-01-01T00:00:00.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </Layout::Table>
+
+        <h5>Other formatters</h5>
+
+        <Layout::Table filled>
+            <table>
+                <thead>
+                    <tr>
+                        <th w-10>Specifier</th>
+                        <th w-10>Example</th>
+                        <th w-80>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>%t</code></td>
+                        <td></td>
+                        <td>Literal tab (<code>\t</code>).</td>
+                    </tr>
+                    <tr>
+                        <td><code>%n</code></td>
+                        <td></td>
+                        <td>Literal newline (<code>\n</code>).</td>
+                    </tr>
+                    <tr>
+                        <td><code>%%</code></td>
+                        <td></td>
+                        <td>Literal percent sign.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </Layout::Table>
+
+    </details>
 
 </Layout::Group>
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "month"}}>
+<Layout::Group {{waypoint 'group'}}>
 
-	<Layout::Text text-l text-f>
-		<h3>time::month</h3>
-		<p>The <code>time::month</code> function extracts the month as a number from a datetime.</p>
-		<Code @name="docs-surrealql-functions-time-month.surql" text="API Definition">
-			time::month(datetime) -> number
-		</Code>
-		<p>The following example shows this function, and its output, when used in a select statement:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-time-month-input.surql">
-				SELECT * FROM time::month("2021-11-01T08:30:17+00:00");
-			</Code>
-			<Code @name="docs-surrealql-functions-time-month-result.txt">
-				11
-			</Code>
-		</codes>
-		<p>If the argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+    <Layout::Text text-l text-f>
+        <h3>time::group</h3>
+        <p>The
+            <code>time::group</code>
+            function reduces and rounds a datetime down to a particular time interval. The second argument must be a string, and can be one
+            of the following values:
+            <code>year</code>,
+            <code>month</code>,
+            <code>day</code>,
+            <code>hour</code>,
+            <code>minute</code>,
+            <code>second</code>.</p>
+        <Code @name='docs-surrealql-functions-time-group.surql' text='API Definition'>
+            time::group(datetime, string) -> datetime
+        </Code>
+        <p>The following example shows this function, and its output, when used in a select statement:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-time-month-error-input.surql">
-				SELECT * FROM time::month(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-time-month-error-result.txt">
-				null
-			</Code>
-		</codes>
-	</Layout::Text>
-
-</Layout::Group>
-
-<Layout::Gap small />
-
-<Layout::Group {{waypoint "nano"}}>
-
-	<Layout::Text text-l text-f>
-		<h3>time::nano</h3>
-		<p>The <code>time::nano</code> function returns a datetime as an integer representing the number of nanoseconds since the UNIX epoch.</p>
-		<Code @name="docs-surrealql-functions-time-nano.surql" text="API Definition">
-			time::nano(datetime) -> number
-		</Code>
-		<p>The following example shows this function, and its output, when used in a select statement:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-time-nano-input.surql">
-				SELECT * FROM time::nano("2021-11-01T08:30:17+00:00");
-			</Code>
-			<Code @name="docs-surrealql-functions-time-nano-result.txt">
-				1635755417000000000
-			</Code>
-		</codes>
-		<p>If the argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+            <Code @name='docs-surrealql-functions-time-group-input.surql'>
+                SELECT * FROM time::group("2021-11-01T08:30:17+00:00", "year");
+            </Code>
+            <Code @name='docs-surrealql-functions-time-group-result.txt'>
+                "2021-01-01T00:00:00Z"
+            </Code>
+        </codes>
+        <p>If the first argument is not a datetime, then an
+            <Link @link='docs.surrealql.datamodel.simple'><code>EMPTY</code></Link>
+            value will be returned:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-time-nano-error-input.surql">
-				SELECT * FROM time::nano(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-time-nano-error-result.txt">
-				null
-			</Code>
-		</codes>
-	</Layout::Text>
+            <Code @name='docs-surrealql-functions-time-group-error-input.surql'>
+                SELECT * FROM time::group(12345, "week");
+            </Code>
+            <Code @name='docs-surrealql-functions-time-group-error-result.txt'>
+                null
+            </Code>
+        </codes>
+    </Layout::Text>
 
 </Layout::Group>
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "now"}}>
+<Layout::Group {{waypoint 'hour'}}>
 
-	<Layout::Text text-l text-f>
-		<h3>time::now</h3>
-		<p>The <code>time::now</code> function returns the current datetime as an ISO8601 timestamp.</p>
-		<Code @name="docs-surrealql-functions-time-now.surql" text="API Definition">
-			time::now() -> datetime
-		</Code>
-		<p>The following example shows this function, and its output, when used in a select statement:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-time-now-input.surql">
-				SELECT * FROM time::now();
-			</Code>
-			<Code @name="docs-surrealql-functions-time-now-result.txt">
-				"2022-04-27T19:27:09.232928Z"
-			</Code>
-		</codes>
-	</Layout::Text>
-
-</Layout::Group>
-
-<Layout::Gap small />
-
-<Layout::Group {{waypoint "round"}}>
-
-	<Layout::Text text-l text-f>
-		<h3>time::round</h3>
-		<p>The <code>time::round</code> function rounds a datetime up by a specific duration.</p>
-		<Code @name="docs-surrealql-functions-time-round.surql" text="API Definition">
-			time::round(datetime, duration) -> datetime
-		</Code>
-		<p>The following example shows this function, and its output, when used in a select statement:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-time-round-input.surql">
-				SELECT * FROM time::round("2021-11-01T08:30:17+00:00", 1w);
-			</Code>
-			<Code @name="docs-surrealql-functions-time-round-result.txt">
-				"2021-11-04T00:00:00Z"
-			</Code>
-		</codes>
-		<p>If the first argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+    <Layout::Text text-l text-f>
+        <h3>time::hour</h3>
+        <p>The <code>time::hour</code> function extracts the hour as a number from a datetime.</p>
+        <Code @name='docs-surrealql-functions-time-hour.surql' text='API Definition'>
+            time::hour(datetime) -> number
+        </Code>
+        <p>The following example shows this function, and its output, when used in a select statement:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-time-round-error-input.surql">
-				SELECT * FROM time::round(12345, 1w);
-			</Code>
-			<Code @name="docs-surrealql-functions-time-round-error-result.txt">
-				null
-			</Code>
-		</codes>
-	</Layout::Text>
-
-</Layout::Group>
-
-<Layout::Gap small />
-
-<Layout::Group {{waypoint "second"}}>
-
-	<Layout::Text text-l text-f>
-		<h3>time::second</h3>
-		<p>The <code>time::second</code> function extracts the second as a number from a datetime.</p>
-		<Code @name="docs-surrealql-functions-time-second.surql" text="API Definition">
-			time::second(datetime) -> number
-		</Code>
-		<p>The following example shows this function, and its output, when used in a select statement:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-time-second-input.surql">
-				SELECT * FROM time::second("2021-11-01T08:30:17+00:00");
-			</Code>
-			<Code @name="docs-surrealql-functions-time-second-result.txt">
-				17
-			</Code>
-		</codes>
-		<p>If the argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+            <Code @name='docs-surrealql-functions-time-hour-input.surql'>
+                SELECT * FROM time::hour("2021-11-01T08:30:17+00:00");
+            </Code>
+            <Code @name='docs-surrealql-functions-time-hour-result.txt'>
+                8
+            </Code>
+        </codes>
+        <p>If the argument is not a datetime, then an
+            <Link @link='docs.surrealql.datamodel.simple'><code>EMPTY</code></Link>
+            value will be returned:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-time-second-error-input.surql">
-				SELECT * FROM time::second(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-time-second-error-result.txt">
-				null
-			</Code>
-		</codes>
-	</Layout::Text>
+            <Code @name='docs-surrealql-functions-time-hour-error-input.surql'>
+                SELECT * FROM time::hour(12345);
+            </Code>
+            <Code @name='docs-surrealql-functions-time-hour-error-result.txt'>
+                null
+            </Code>
+        </codes>
+    </Layout::Text>
 
 </Layout::Group>
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "timezone"}}>
+<Layout::Group {{waypoint 'minute'}}>
 
-	<Layout::Text text-l text-f>
-		<h3>time::timezone</h3>
-		<p>The <code>time::timezone</code> function returns the current local timezone offset in hours.</p>
-		<Code @name="docs-surrealql-functions-time-timezone.surql" text="API Definition">
-			time::timezone() -> string
-		</Code>
-		<p>The following example shows this function, and its output, when used in a select statement:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-time-timezone-input.surql">
-				SELECT * FROM time::timezone();
-			</Code>
-			<Code @name="docs-surrealql-functions-time-timezone-result.txt">
-				"+05:30"
-			</Code>
-		</codes>
-	</Layout::Text>
-
-</Layout::Group>
-
-<Layout::Gap small />
-
-<Layout::Group {{waypoint "unix"}}>
-
-	<Layout::Text text-l text-f>
-		<h3>time::unix</h3>
-		<p>The <code>time::unix</code> function returns a datetime as an integer representing the number of seconds since the UNIX epoch.</p>
-		<Code @name="docs-surrealql-functions-time-unix.surql" text="API Definition">
-			time::unix(datetime) -> number
-		</Code>
-		<p>The following example shows this function, and its output, when used in a select statement:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-time-unix-input.surql">
-				SELECT * FROM time::unix("2021-11-01T08:30:17+00:00");
-			</Code>
-			<Code @name="docs-surrealql-functions-time-unix-result.txt">
-				1635755417
-			</Code>
-		</codes>
-		<p>If the argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+    <Layout::Text text-l text-f>
+        <h3>time::minute</h3>
+        <p>The <code>time::minute</code> function extracts the minutes as a number from a datetime.</p>
+        <Code @name='docs-surrealql-functions-time-minute.surql' text='API Definition'>
+            time::minute(datetime) -> number
+        </Code>
+        <p>The following example shows this function, and its output, when used in a select statement:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-time-unix-error-input.surql">
-				SELECT * FROM time::unix(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-time-unix-error-result.txt">
-				null
-			</Code>
-		</codes>
-	</Layout::Text>
+            <Code @name='docs-surrealql-functions-time-minute-input.surql'>
+                SELECT * FROM time::minute("2021-11-01T08:30:17+00:00");
+            </Code>
+            <Code @name='docs-surrealql-functions-time-minute-result.txt'>
+                30
+            </Code>
+        </codes>
+        <p>If the argument is not a datetime, then an
+            <Link @link='docs.surrealql.datamodel.simple'><code>EMPTY</code></Link>
+            value will be returned:</p>
+        <codes vertical>
+            <Code @name='docs-surrealql-functions-time-minute-error-input.surql'>
+                SELECT * FROM time::minute(12345);
+            </Code>
+            <Code @name='docs-surrealql-functions-time-minute-error-result.txt'>
+                null
+            </Code>
+        </codes>
+    </Layout::Text>
 
 </Layout::Group>
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "wday"}}>
+<Layout::Group {{waypoint 'month'}}>
 
-	<Layout::Text text-l text-f>
-		<h3>time::wday</h3>
-		<p>The <code>time::wday</code> function extracts the week day as a number from a datetime.</p>
-		<Code @name="docs-surrealql-functions-time-wday.surql" text="API Definition">
-			time::wday(datetime) -> number
-		</Code>
-		<p>The following example shows this function, and its output, when used in a select statement:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-time-wday-input.surql">
-				SELECT * FROM time::wday("2021-11-01T08:30:17+00:00");
-			</Code>
-			<Code @name="docs-surrealql-functions-time-wday-result.txt">
-				1
-			</Code>
-		</codes>
-		<p>If the argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+    <Layout::Text text-l text-f>
+        <h3>time::month</h3>
+        <p>The <code>time::month</code> function extracts the month as a number from a datetime.</p>
+        <Code @name='docs-surrealql-functions-time-month.surql' text='API Definition'>
+            time::month(datetime) -> number
+        </Code>
+        <p>The following example shows this function, and its output, when used in a select statement:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-time-wday-error-input.surql">
-				SELECT * FROM time::wday(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-time-wday-error-result.txt">
-				null
-			</Code>
-		</codes>
-	</Layout::Text>
+            <Code @name='docs-surrealql-functions-time-month-input.surql'>
+                SELECT * FROM time::month("2021-11-01T08:30:17+00:00");
+            </Code>
+            <Code @name='docs-surrealql-functions-time-month-result.txt'>
+                11
+            </Code>
+        </codes>
+        <p>If the argument is not a datetime, then an
+            <Link @link='docs.surrealql.datamodel.simple'><code>EMPTY</code></Link>
+            value will be returned:</p>
+        <codes vertical>
+            <Code @name='docs-surrealql-functions-time-month-error-input.surql'>
+                SELECT * FROM time::month(12345);
+            </Code>
+            <Code @name='docs-surrealql-functions-time-month-error-result.txt'>
+                null
+            </Code>
+        </codes>
+    </Layout::Text>
 
 </Layout::Group>
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "week"}}>
+<Layout::Group {{waypoint 'nano'}}>
 
-	<Layout::Text text-l text-f>
-		<h3>time::week</h3>
-		<p>The <code>time::week</code> function extracts the week as a number from a datetime.</p>
-		<Code @name="docs-surrealql-functions-time-week.surql" text="API Definition">
-			time::week(datetime) -> number
-		</Code>
-		<p>The following example shows this function, and its output, when used in a select statement:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-time-week-input.surql">
-				SELECT * FROM time::week("2021-11-01T08:30:17+00:00");
-			</Code>
-			<Code @name="docs-surrealql-functions-time-week-result.txt">
-				44
-			</Code>
-		</codes>
-		<p>If the argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+    <Layout::Text text-l text-f>
+        <h3>time::nano</h3>
+        <p>The
+            <code>time::nano</code>
+            function returns a datetime as an integer representing the number of nanoseconds since the UNIX epoch.</p>
+        <Code @name='docs-surrealql-functions-time-nano.surql' text='API Definition'>
+            time::nano(datetime) -> number
+        </Code>
+        <p>The following example shows this function, and its output, when used in a select statement:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-time-week-error-input.surql">
-				SELECT * FROM time::week(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-time-week-error-result.txt">
-				null
-			</Code>
-		</codes>
-	</Layout::Text>
+            <Code @name='docs-surrealql-functions-time-nano-input.surql'>
+                SELECT * FROM time::nano("2021-11-01T08:30:17+00:00");
+            </Code>
+            <Code @name='docs-surrealql-functions-time-nano-result.txt'>
+                1635755417000000000
+            </Code>
+        </codes>
+        <p>If the argument is not a datetime, then an
+            <Link @link='docs.surrealql.datamodel.simple'><code>EMPTY</code></Link>
+            value will be returned:</p>
+        <codes vertical>
+            <Code @name='docs-surrealql-functions-time-nano-error-input.surql'>
+                SELECT * FROM time::nano(12345);
+            </Code>
+            <Code @name='docs-surrealql-functions-time-nano-error-result.txt'>
+                null
+            </Code>
+        </codes>
+    </Layout::Text>
 
 </Layout::Group>
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "yday"}}>
+<Layout::Group {{waypoint 'now'}}>
 
-	<Layout::Text text-l text-f>
-		<h3>time::yday</h3>
-		<p>The <code>time::yday</code> function extracts the yday as a number from a datetime.</p>
-		<Code @name="docs-surrealql-functions-time-yday.surql" text="API Definition">
-			time::yday(datetime) -> number
-		</Code>
-		<p>The following example shows this function, and its output, when used in a select statement:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-time-yday-input.surql">
-				SELECT * FROM time::yday("2021-11-01T08:30:17+00:00");
-			</Code>
-			<Code @name="docs-surrealql-functions-time-yday-result.txt">
-				305
-			</Code>
-		</codes>
-		<p>If the argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+    <Layout::Text text-l text-f>
+        <h3>time::now</h3>
+        <p>The <code>time::now</code> function returns the current datetime as an ISO8601 timestamp.</p>
+        <Code @name='docs-surrealql-functions-time-now.surql' text='API Definition'>
+            time::now() -> datetime
+        </Code>
+        <p>The following example shows this function, and its output, when used in a select statement:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-time-yday-error-input.surql">
-				SELECT * FROM time::yday(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-time-yday-error-result.txt">
-				null
-			</Code>
-		</codes>
-	</Layout::Text>
+            <Code @name='docs-surrealql-functions-time-now-input.surql'>
+                SELECT * FROM time::now();
+            </Code>
+            <Code @name='docs-surrealql-functions-time-now-result.txt'>
+                "2022-04-27T19:27:09.232928Z"
+            </Code>
+        </codes>
+    </Layout::Text>
 
 </Layout::Group>
 
 <Layout::Gap small />
 
-<Layout::Group {{waypoint "year"}}>
+<Layout::Group {{waypoint 'round'}}>
 
-	<Layout::Text text-l text-f>
-		<h3>time::year</h3>
-		<p>The <code>time::year</code> function extracts the year as a number from a datetime.</p>
-		<Code @name="docs-surrealql-functions-time-year.surql" text="API Definition">
-			time::year(datetime) -> number
-		</Code>
-		<p>The following example shows this function, and its output, when used in a select statement:</p>
-		<codes vertical>
-			<Code @name="docs-surrealql-functions-time-year-input.surql">
-				SELECT * FROM time::year("2021-11-01T08:30:17+00:00");
-			</Code>
-			<Code @name="docs-surrealql-functions-time-year-result.txt">
-				2021
-			</Code>
-		</codes>
-		<p>If the argument is not a datetime, then an <Link @link="docs.surrealql.datamodel.simple"><code>EMPTY</code></Link> value will be returned:</p>
+    <Layout::Text text-l text-f>
+        <h3>time::round</h3>
+        <p>The <code>time::round</code> function rounds a datetime up by a specific duration.</p>
+        <Code @name='docs-surrealql-functions-time-round.surql' text='API Definition'>
+            time::round(datetime, duration) -> datetime
+        </Code>
+        <p>The following example shows this function, and its output, when used in a select statement:</p>
         <codes vertical>
-			<Code @name="docs-surrealql-functions-time-year-error-input.surql">
-				SELECT * FROM time::year(12345);
-			</Code>
-			<Code @name="docs-surrealql-functions-time-year-error-result.txt">
-				null
-			</Code>
-		</codes>
-	</Layout::Text>
+            <Code @name='docs-surrealql-functions-time-round-input.surql'>
+                SELECT * FROM time::round("2021-11-01T08:30:17+00:00", 1w);
+            </Code>
+            <Code @name='docs-surrealql-functions-time-round-result.txt'>
+                "2021-11-04T00:00:00Z"
+            </Code>
+        </codes>
+        <p>If the first argument is not a datetime, then an
+            <Link @link='docs.surrealql.datamodel.simple'><code>EMPTY</code></Link>
+            value will be returned:</p>
+        <codes vertical>
+            <Code @name='docs-surrealql-functions-time-round-error-input.surql'>
+                SELECT * FROM time::round(12345, 1w);
+            </Code>
+            <Code @name='docs-surrealql-functions-time-round-error-result.txt'>
+                null
+            </Code>
+        </codes>
+    </Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint 'second'}}>
+
+    <Layout::Text text-l text-f>
+        <h3>time::second</h3>
+        <p>The <code>time::second</code> function extracts the second as a number from a datetime.</p>
+        <Code @name='docs-surrealql-functions-time-second.surql' text='API Definition'>
+            time::second(datetime) -> number
+        </Code>
+        <p>The following example shows this function, and its output, when used in a select statement:</p>
+        <codes vertical>
+            <Code @name='docs-surrealql-functions-time-second-input.surql'>
+                SELECT * FROM time::second("2021-11-01T08:30:17+00:00");
+            </Code>
+            <Code @name='docs-surrealql-functions-time-second-result.txt'>
+                17
+            </Code>
+        </codes>
+        <p>If the argument is not a datetime, then an
+            <Link @link='docs.surrealql.datamodel.simple'><code>EMPTY</code></Link>
+            value will be returned:</p>
+        <codes vertical>
+            <Code @name='docs-surrealql-functions-time-second-error-input.surql'>
+                SELECT * FROM time::second(12345);
+            </Code>
+            <Code @name='docs-surrealql-functions-time-second-error-result.txt'>
+                null
+            </Code>
+        </codes>
+    </Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint 'timezone'}}>
+
+    <Layout::Text text-l text-f>
+        <h3>time::timezone</h3>
+        <p>The <code>time::timezone</code> function returns the current local timezone offset in hours.</p>
+        <Code @name='docs-surrealql-functions-time-timezone.surql' text='API Definition'>
+            time::timezone() -> string
+        </Code>
+        <p>The following example shows this function, and its output, when used in a select statement:</p>
+        <codes vertical>
+            <Code @name='docs-surrealql-functions-time-timezone-input.surql'>
+                SELECT * FROM time::timezone();
+            </Code>
+            <Code @name='docs-surrealql-functions-time-timezone-result.txt'>
+                "+05:30"
+            </Code>
+        </codes>
+    </Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint 'unix'}}>
+
+    <Layout::Text text-l text-f>
+        <h3>time::unix</h3>
+        <p>The
+            <code>time::unix</code>
+            function returns a datetime as an integer representing the number of seconds since the UNIX epoch.</p>
+        <Code @name='docs-surrealql-functions-time-unix.surql' text='API Definition'>
+            time::unix(datetime) -> number
+        </Code>
+        <p>The following example shows this function, and its output, when used in a select statement:</p>
+        <codes vertical>
+            <Code @name='docs-surrealql-functions-time-unix-input.surql'>
+                SELECT * FROM time::unix("2021-11-01T08:30:17+00:00");
+            </Code>
+            <Code @name='docs-surrealql-functions-time-unix-result.txt'>
+                1635755417
+            </Code>
+        </codes>
+        <p>If the argument is not a datetime, then an
+            <Link @link='docs.surrealql.datamodel.simple'><code>EMPTY</code></Link>
+            value will be returned:</p>
+        <codes vertical>
+            <Code @name='docs-surrealql-functions-time-unix-error-input.surql'>
+                SELECT * FROM time::unix(12345);
+            </Code>
+            <Code @name='docs-surrealql-functions-time-unix-error-result.txt'>
+                null
+            </Code>
+        </codes>
+    </Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint 'wday'}}>
+
+    <Layout::Text text-l text-f>
+        <h3>time::wday</h3>
+        <p>The <code>time::wday</code> function extracts the week day as a number from a datetime.</p>
+        <Code @name='docs-surrealql-functions-time-wday.surql' text='API Definition'>
+            time::wday(datetime) -> number
+        </Code>
+        <p>The following example shows this function, and its output, when used in a select statement:</p>
+        <codes vertical>
+            <Code @name='docs-surrealql-functions-time-wday-input.surql'>
+                SELECT * FROM time::wday("2021-11-01T08:30:17+00:00");
+            </Code>
+            <Code @name='docs-surrealql-functions-time-wday-result.txt'>
+                1
+            </Code>
+        </codes>
+        <p>If the argument is not a datetime, then an
+            <Link @link='docs.surrealql.datamodel.simple'><code>EMPTY</code></Link>
+            value will be returned:</p>
+        <codes vertical>
+            <Code @name='docs-surrealql-functions-time-wday-error-input.surql'>
+                SELECT * FROM time::wday(12345);
+            </Code>
+            <Code @name='docs-surrealql-functions-time-wday-error-result.txt'>
+                null
+            </Code>
+        </codes>
+    </Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint 'week'}}>
+
+    <Layout::Text text-l text-f>
+        <h3>time::week</h3>
+        <p>The <code>time::week</code> function extracts the week as a number from a datetime.</p>
+        <Code @name='docs-surrealql-functions-time-week.surql' text='API Definition'>
+            time::week(datetime) -> number
+        </Code>
+        <p>The following example shows this function, and its output, when used in a select statement:</p>
+        <codes vertical>
+            <Code @name='docs-surrealql-functions-time-week-input.surql'>
+                SELECT * FROM time::week("2021-11-01T08:30:17+00:00");
+            </Code>
+            <Code @name='docs-surrealql-functions-time-week-result.txt'>
+                44
+            </Code>
+        </codes>
+        <p>If the argument is not a datetime, then an
+            <Link @link='docs.surrealql.datamodel.simple'><code>EMPTY</code></Link>
+            value will be returned:</p>
+        <codes vertical>
+            <Code @name='docs-surrealql-functions-time-week-error-input.surql'>
+                SELECT * FROM time::week(12345);
+            </Code>
+            <Code @name='docs-surrealql-functions-time-week-error-result.txt'>
+                null
+            </Code>
+        </codes>
+    </Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint 'yday'}}>
+
+    <Layout::Text text-l text-f>
+        <h3>time::yday</h3>
+        <p>The <code>time::yday</code> function extracts the yday as a number from a datetime.</p>
+        <Code @name='docs-surrealql-functions-time-yday.surql' text='API Definition'>
+            time::yday(datetime) -> number
+        </Code>
+        <p>The following example shows this function, and its output, when used in a select statement:</p>
+        <codes vertical>
+            <Code @name='docs-surrealql-functions-time-yday-input.surql'>
+                SELECT * FROM time::yday("2021-11-01T08:30:17+00:00");
+            </Code>
+            <Code @name='docs-surrealql-functions-time-yday-result.txt'>
+                305
+            </Code>
+        </codes>
+        <p>If the argument is not a datetime, then an
+            <Link @link='docs.surrealql.datamodel.simple'><code>EMPTY</code></Link>
+            value will be returned:</p>
+        <codes vertical>
+            <Code @name='docs-surrealql-functions-time-yday-error-input.surql'>
+                SELECT * FROM time::yday(12345);
+            </Code>
+            <Code @name='docs-surrealql-functions-time-yday-error-result.txt'>
+                null
+            </Code>
+        </codes>
+    </Layout::Text>
+
+</Layout::Group>
+
+<Layout::Gap small />
+
+<Layout::Group {{waypoint 'year'}}>
+
+    <Layout::Text text-l text-f>
+        <h3>time::year</h3>
+        <p>The <code>time::year</code> function extracts the year as a number from a datetime.</p>
+        <Code @name='docs-surrealql-functions-time-year.surql' text='API Definition'>
+            time::year(datetime) -> number
+        </Code>
+        <p>The following example shows this function, and its output, when used in a select statement:</p>
+        <codes vertical>
+            <Code @name='docs-surrealql-functions-time-year-input.surql'>
+                SELECT * FROM time::year("2021-11-01T08:30:17+00:00");
+            </Code>
+            <Code @name='docs-surrealql-functions-time-year-result.txt'>
+                2021
+            </Code>
+        </codes>
+        <p>If the argument is not a datetime, then an
+            <Link @link='docs.surrealql.datamodel.simple'><code>EMPTY</code></Link>
+            value will be returned:</p>
+        <codes vertical>
+            <Code @name='docs-surrealql-functions-time-year-error-input.surql'>
+                SELECT * FROM time::year(12345);
+            </Code>
+            <Code @name='docs-surrealql-functions-time-year-error-result.txt'>
+                null
+            </Code>
+        </codes>
+    </Layout::Text>
 
 </Layout::Group>
 
